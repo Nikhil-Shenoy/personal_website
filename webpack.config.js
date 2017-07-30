@@ -1,35 +1,49 @@
-var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
-var path = require('path');
 
 module.exports = {
-  context: path.join(__dirname, "src"),
-  devtool: debug ? "inline-sourcemap" : null,
-  entry: "./js/App.js",
-  devServer: {
-    inline: true,
-    port: 3333
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'react-hmre'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
-        }
-      }
-    ]
-  },
-  output: {
-    path: __dirname + "/src/",
-    filename: "bundle.min.js"
-  },
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
-};
+	entry: [
+		"script!jquery/dist/jquery.min.js",
+		"script!foundation-sites/dist/foundation.min.js", 
+		"./app/app.jsx"
+	],
+	externals: {
+		jquery: 'jQuery'
+	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			'$': 'jquery',
+			'jQuery': 'jquery'
+		})
+	],
+	output: {
+		path: __dirname, 
+		filename: "./public/bundle.js"
+	},
+	resolve: {
+		root: __dirname,
+		alias: {
+			//Main: 'app/components/Main.jsx',
+			//Nav:  'app/components/Nav.jsx',
+			//Weather: 'app/components/Weather.jsx',
+			//WeatherForm: 'app/components/WeatherForm.jsx',
+			//About: 'app/components/About.jsx',
+			//Example: 'app/components/Example.jsx',
+			//WeatherMessage: 'app/components/WeatherMessage.jsx',
+			//openWeatherMap: 'app/api/openWeatherMap.jsx',
+			//ErrorModal: 'app/components/ErrorModal.jsx'
+		},
+		extensions: ['','.js', '.jsx'],
+	},
+	module: {
+		loaders: [
+			{
+				loader: "babel-loader",
+				query: {
+					presets: ['react', 'es2015']
+				},
+				test: /\.jsx?$/,
+				exclude: /(node_modules|bower_components)/
+			}
+		]
+	}
+}
