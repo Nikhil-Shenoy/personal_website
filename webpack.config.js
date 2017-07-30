@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 	entry: [
@@ -46,5 +47,11 @@ module.exports = {
 				exclude: /(node_modules|bower_components)/
 			}
 		]
+	},
+	devServer: {
+		contentBase: path.join(__dirname, "public"),
+		port: 3000,
+		watchContentBase: true,
+		compress: true
 	}
 }
