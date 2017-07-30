@@ -3,8 +3,8 @@ var webpack = require('webpack');
 module.exports = {
 	entry: [
 		"script!jquery/dist/jquery.min.js",
-		"script!foundation-sites/dist/foundation.min.js", 
-		"./app/app.jsx"
+		"script!foundation-sites/dist/js/foundation.min.js", 
+		"./src/main.jsx"
 	],
 	externals: {
 		jquery: 'jQuery'
@@ -22,6 +22,7 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		alias: {
+			HomePage: 'src/components/HomePage.jsx'
 			//Main: 'app/components/Main.jsx',
 			//Nav:  'app/components/Nav.jsx',
 			//Weather: 'app/components/Weather.jsx',
