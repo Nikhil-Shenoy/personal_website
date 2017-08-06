@@ -23,7 +23,11 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		alias: {
-			HomePage: 'src/components/HomePage.jsx'
+			Home: 'src/components/Home.jsx',
+			TopBar: 'src/components/TopBar.jsx',
+			Root: 'src/components/Root.jsx',
+			About: 'src/components/About.jsx',
+			Blog: 'src/components/Blog.jsx',
 			//Main: 'app/components/Main.jsx',
 			//Nav:  'app/components/Nav.jsx',
 			//Weather: 'app/components/Weather.jsx',
