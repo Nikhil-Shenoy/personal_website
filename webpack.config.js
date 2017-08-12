@@ -53,9 +53,15 @@ module.exports = {
 			{
 				loader: "url-loader",
 				test: /\.(png|svg|jpg|gif)$/,
+				exclude: /node_modules/,
 				options: {
 					limit: 25000
 				}
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				loader: 'style-loader!css-loader!sass-loader'
 			}
 		]
 	},
