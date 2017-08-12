@@ -6,8 +6,8 @@ var Root = React.createClass({
 		return (
 			<div>
 				<TopBar/>
-				<div className="row">
-					<div className="columns medium-6 large-4 small-centered">
+				<div className="grid-x">
+					<div className="small-6 small-offset-3c ell">
 						{this.props.children}
 					</div>
 				</div>
