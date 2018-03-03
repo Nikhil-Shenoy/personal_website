@@ -8,10 +8,18 @@ var icon_style = {
 	'padding': '20px',
 }
 
+var footer_style = {
+	'position': 'fixed',
+	'bottom': '0px',
+	'textAlign': 'center',
+	'padding': '20px',
+	// 'margin': 'auto'
+}
+
 var Footer = React.createClass({
 	render: function() {
 		return (
-			<div style={{ "textAlign": "center" }}>
+			<div style={ footer_style }>
 				<a style={ icon_style } href="https://www.facebook.com/nikhil.shenoy.37" target="_blank"><FaFacebookOfficial size="36"/></a>
 				<a style={ icon_style } href="https://www.linkedin.com/in/nikhil-shenoy-02059257/" target="_blank"><FaLinkedinSquare size="36"/></a>
 				<a style={ icon_style } href="https://github.com/Nikhil-Shenoy" target="_blank"><FaGithub size="36"/></a>

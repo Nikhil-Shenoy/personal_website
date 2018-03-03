@@ -2,6 +2,8 @@ var React = require('react');
 var ProfilePic = require('../assets/me.jpg');
 var TopBar = require('TopBar');
 
+import "../style/style.css"
+
 import styled from 'styled-components';
 //import Img from 'react-image';
 
@@ -22,11 +24,12 @@ const Title = styled.h1`
 
 // Styling is a pain in the ass
 
+				// <Title>Nikhil Shenoy</Title>
 var Home = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<Title>Nikhil Shenoy</Title>
+				<h1>Nikhil Shenoy</h1>
 				<div style={{"textAlign": "center" }}>
 					<img style={pro_pic_styles} src={ProfilePic}/>
 				</div>

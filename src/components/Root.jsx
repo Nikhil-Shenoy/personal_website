@@ -10,7 +10,7 @@ var Root = React.createClass({
 					<div className="small-6 small-offset-3 cell">
 						<TopBar/>
 						{this.props.children}
-						<Footer/>
+						<Footer style={ "textAlign: center" }/>
 					</div>
 				</div>
 			</div>
