@@ -28,6 +28,7 @@ module.exports = {
 			Root: 'src/components/Root.jsx',
 			About: 'src/components/About.jsx',
 			Blog: 'src/components/Blog.jsx',
+			Footer: 'src/components/Footer.jsx'
 			//Main: 'app/components/Main.jsx',
 			//Nav:  'app/components/Nav.jsx',
 			//Weather: 'app/components/Weather.jsx',
